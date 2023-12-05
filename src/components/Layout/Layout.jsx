@@ -4,6 +4,7 @@ import { StyledHeader } from './Layout.styled';
 export const Layout = () => {
   return (
     <>
+       <Suspense fallback={<Loader />}>
       <StyledHeader>
         <nav>
           <NavLink className="header-link" to="/">
@@ -17,6 +18,7 @@ export const Layout = () => {
       <main>
         <Outlet />
       </main>
+      </Suspense>
     </>
   );
 };
