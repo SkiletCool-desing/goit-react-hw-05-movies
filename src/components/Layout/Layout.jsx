@@ -1,10 +1,11 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import { StyledHeader } from './Layout.styled';
+import { Suspense, Loader } from 'react';
+import { StyledHeader} from './Layout.styled';
 
 export const Layout = () => {
   return (
     <>
-       <Suspense fallback={<Loader />}>
+       
       <StyledHeader>
         <nav>
           <NavLink className="header-link" to="/">
@@ -14,11 +15,14 @@ export const Layout = () => {
             Movies
           </NavLink>
         </nav>
-      </StyledHeader>
-      <main>
-        <Outlet />
+        </StyledHeader>
+        
+        <main>
+          <Suspense fallback={<Loader />}>
+          <Outlet />
+         </Suspense> 
       </main>
-      </Suspense>
+      
     </>
   );
 };
