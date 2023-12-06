@@ -1,8 +1,7 @@
 import React, { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { StyledHeader } from './Layout.styled';
-// Від дредактувати👇
-import { Loader } from '../Loader/Loader';
+import  Loader  from '../Loader/Loader';
 
 export const Layout = () => {
   return (
